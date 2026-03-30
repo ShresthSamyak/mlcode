@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FWI Prediction</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .form-container {
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+        }
+        .form-container input {
+            padding: 5px;
+            font-size: 16px;
+            margin-bottom: -1px; /* To make borders overlap like the image */
+            border: 1px solid #767676;
+            outline: none;
+        }
+        .form-container input::placeholder {
+            color: #757575;
+        }
+        .form-container button {
+            margin-top: 2px;
+            padding: 5px;
+            font-size: 16px;
+            width: 80px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>FWI Prediction</h1>
+
+    <form action="/predictdata" method="POST">
+        <div class="form-container">
+            <input type="text" name="Temperature" placeholder="Temperature">
+            <input type="text" name="RH" placeholder="RH">
+            <input type="text" name="Ws" placeholder="Ws">
+            <input type="text" name="Rain" placeholder="Rain">
+            <input type="text" name="FFMC" placeholder="FFMC">
+            <input type="text" name="DMC" placeholder="DMC">
+            <input type="text" name="ISI" placeholder="ISI">
+            <input type="text" name="Classes" placeholder="Classes">
+            <input type="text" name="Region" placeholder="Region">
+            <button type="submit">Predict</button>
+        </div>
+    </form>
+
+    <br>
+    <h2>THE FWI prediction is {{ results }}</h2>
+</body>
+</html>
